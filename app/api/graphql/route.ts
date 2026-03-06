@@ -44,6 +44,8 @@ const resolvers = {
   },
 };
 
+export const runtime = "nodejs";
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -51,10 +53,10 @@ const server = new ApolloServer({
 
 const apolloHandler = startServerAndCreateNextHandler(server);
 
-export async function GET(req: NextRequest) {
-  return apolloHandler(req);
+export async function GET(request: NextRequest) {
+  return apolloHandler(request as any);
 }
 
-export async function POST(req: NextRequest) {
-  return apolloHandler(req);
+export async function POST(request: NextRequest) {
+  return apolloHandler(request as any);
 }
