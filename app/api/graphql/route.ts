@@ -1,6 +1,7 @@
 import { ApolloServer } from "@apollo/server";
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import { gql } from "graphql-tag";
+import { NextRequest } from "next/server";
 
 const movies = [
   { id: "1", title: "Inception", year: 2010, director: "Christopher Nolan", genre: "Sci-Fi", rating: 8.8 },
@@ -48,6 +49,6 @@ const server = new ApolloServer({
   resolvers,
 });
 
-const handler = startServerAndCreateNextHandler(server);
+const handler = startServerAndCreateNextHandler<NextRequest>(server);
 
 export { handler as GET, handler as POST };
