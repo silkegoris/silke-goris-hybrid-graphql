@@ -20,6 +20,7 @@ const movies = [
   { id: "14", title: "Avatar", year: 2009, director: "James Cameron", genre: "Sci-Fi", rating: 7.8 },
   { id: "15", title: "Parasite", year: 2019, director: "Bong Joon-ho", genre: "Thriller", rating: 8.5 }
 ];
+
 const typeDefs = gql`
   type Movie {
     id: ID
